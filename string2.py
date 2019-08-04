@@ -19,7 +19,13 @@
 
 def verbing(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    if len(s) >= 3:
+        if s.find("ing") != -1:
+            return "{}ly".format(s)
+        else:
+            return "{}ing".format(s)
+    else:
+        return(s)
 
 
 # E. not_bad
@@ -32,7 +38,10 @@ def verbing(s):
 # This dinner is good!
 def not_bad(s):
     """Your code goes here.  Edit this docstring."""
-    return
+    if s.find("not") < s.find("bad"):
+        return(s.replace(s[s.find("not"):s.find("bad")+len("bad")], "good"))
+    else:
+        return s
 
 
 # F. front_back
@@ -44,8 +53,23 @@ def not_bad(s):
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
     """Your code goes here.  Edit this docstring."""
-    return
-
+    if len(a) % 2 == 0 and len(b) % 2 == 0:
+        new_a = len(a) / 2
+        new_b = len(b) / 2
+        output = "{}{}{}{}".format(a[:new_a], b[:new_b], a[new_a:], b[new_b:])
+    if len(b) % 2 != 0 and len(a) % 2 == 0:
+        new_a = len(a) / 2
+        new_b = (len(b) + 1) / 2
+        output = "{}{}{}{}".format(a[:new_a], b[:new_b], a[new_a:], b[new_b:])
+    if len(a) % 2 != 0 and len(b) == 0:
+        new_a = (len(a) + 1) / 2
+        new_b = len(b) / 2
+        output = "{}{}{}{}".format(a[:new_a], b[:new_b], a[new_a:], b[new_b:])
+    else:
+        new_a = (len(a) + 1) / 2
+        new_b = (len(b) + 1) / 2
+        output = "{}{}{}{}".format(a[:new_a], b[:new_b], a[new_a:], b[new_b:])
+    return output
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
