@@ -42,7 +42,6 @@ def both_ends(s):
         return('')
     else:
         return(s[:2]+s[-2:])
-    return
 
 
 # C. fix_start
@@ -75,7 +74,6 @@ def mix_up(a, b):
     b_list = list(b)
     a_list[:2], b_list[:2] = b_list[:2], a_list[:2]
     return "{} {}".format(''.join(a_list), ''.join(b_list))
-    return
 
 
 # Provided simple test() function used in main() to print
