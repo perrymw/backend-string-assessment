@@ -16,7 +16,6 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 
-
 def verbing(s):
     """Your code goes here.  Edit this docstring."""
     if len(s) >= 3:
@@ -36,6 +35,7 @@ def verbing(s):
 # Return the resulting string.
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
+
 def not_bad(s):
     """Your code goes here.  Edit this docstring."""
     if s.find("not") < s.find("bad"):
@@ -51,6 +51,7 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
+
 def front_back(a, b):
     """Your code goes here.  Edit this docstring."""
     if len(a) % 2 == 0 and len(b) % 2 == 0:
@@ -73,6 +74,7 @@ def front_back(a, b):
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
 def test(got, expected):
     """Your code goes here.  Edit this docstring."""
     if got == expected:
@@ -84,6 +86,7 @@ def test(got, expected):
 
 # main() calls the above functions with interesting inputs,
 # using the above test() to check if the result is correct or not.
+
 def main():
     """Your code goes here.  Edit this docstring."""
     print('verbing')

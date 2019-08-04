@@ -23,6 +23,7 @@
 # instead of the actual count.
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
+
 def donuts(count):
     """Your code goes here.  Edit this docstring."""
     if count >= 10:
@@ -36,6 +37,7 @@ def donuts(count):
 # and the last 2 chars of the original string,
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
+
 def both_ends(s):
     """Your code goes here.  Edit this docstring."""
     if len(s)<2:
@@ -53,6 +55,7 @@ def both_ends(s):
 # Assume that the string is length 1 or more.
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
+
 def fix_start(s):
     """Your code goes here.  Edit this docstring."""
     letter = s[0]
@@ -68,6 +71,7 @@ def fix_start(s):
 #   'mix', pod' -> 'pox mid'
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
+
 def mix_up(a, b):
     """Your code goes here.  Edit this docstring."""
     a_list = list(a)
@@ -78,6 +82,7 @@ def mix_up(a, b):
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
 def test(got, expected):
     """Your code goes here.  Edit this docstring."""
     if got == expected:
