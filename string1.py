@@ -39,12 +39,12 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 
 def both_ends(s):
+
     """provides the first two and last two of a string and concatenates them"""
     if len(s)<2:
         return('')
     else:
         return(s[:2]+s[-2:])
-
 
 # C. fix_start
 # Given a string s, return a string
@@ -62,7 +62,6 @@ def fix_start(s):
     for i in range(len(s)):
         new_string = s[1:].replace(letter, "*")
     return letter + new_string
-
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
