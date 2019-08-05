@@ -25,7 +25,7 @@
 # and donuts(23) returns 'Number of donuts: many'
 
 def donuts(count):
-    """Your code goes here.  Edit this docstring."""
+    """Tells whether or not there are too many donuts.  Gotta watch your caloric intake, bro"""
     if count >= 10:
         return("Number of donuts: many")
     else:
@@ -39,7 +39,7 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 
 def both_ends(s):
-    """Your code goes here.  Edit this docstring."""
+    """provides the first two and last two of a string and concatenates them"""
     if len(s)<2:
         return('')
     else:
@@ -57,7 +57,7 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 
 def fix_start(s):
-    """Your code goes here.  Edit this docstring."""
+    """finds of the first letter throughout the string and replaces the letters with asteriscs if the letter occurs more than once."""
     letter = s[0]
     for i in range(len(s)):
         new_string = s[1:].replace(letter, "*")
@@ -73,7 +73,7 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 
 def mix_up(a, b):
-    """Your code goes here.  Edit this docstring."""
+    """This will swap the first two characters of the strings."""
     a_list = list(a)
     b_list = list(b)
     a_list[:2], b_list[:2] = b_list[:2], a_list[:2]
@@ -84,7 +84,7 @@ def mix_up(a, b):
 # what each function returns vs. what it's supposed to return.
 
 def test(got, expected):
-    """Your code goes here.  Edit this docstring."""
+    """Test to test functions."""
     if got == expected:
         prefix = ' OK '
     else:
@@ -95,7 +95,7 @@ def test(got, expected):
 # Provided main() calls the above functions with interesting inputs,
 # using test() to check if each result is correct or not.
 def main():
-    """Your code goes here.  Edit this docstring."""
+    """content to check the functions against in the text."""
     print('donuts')
     # Each line calls donuts, compares its result to the expected for that call.
     test(donuts(4), 'Number of donuts: 4')
