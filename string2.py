@@ -16,10 +16,15 @@
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
 
-
 def verbing(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """Below, this will take any string and add ly or ing.  If the string is too short, nothing will be changed"""
+    if len(s) >= 3:
+        if s.find("ing") != -1:
+            return "{}ly".format(s)
+        else:
+            return "{}ing".format(s)
+    else:
+        return(s)
 
 
 # E. not_bad
@@ -30,9 +35,13 @@ def verbing(s):
 # Return the resulting string.
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
+
 def not_bad(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """This will take a string and replace all the substring between "not" and "bad" and replace it with "good".  If not comes after bad, then the string will remain untouched."""
+    if s.find("not") < s.find("bad"):
+        return(s.replace(s[s.find("not"):s.find("bad")+len("bad")], "good"))
+    else:
+        return s
 
 
 # F. front_back
@@ -42,15 +51,22 @@ def not_bad(s):
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
-def front_back(a, b):
-    """Your code goes here.  Edit this docstring."""
-    return
 
+def front_back(a, b):
+    """This will concactenate words by divide each string in half.  If either string is odd, one is added to make sure that the string works accordingly"""
+    mid_a = len(a)/2
+    mid_b = len(b)/2
+    if len(a) % 2:
+        mid_a += 1
+    if len(b) % 2:
+        mid_b += 1
+    return a[:mid_a]+b[:mid_b] + a[mid_a:] + b[mid_b:]
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
 def test(got, expected):
-    """Your code goes here.  Edit this docstring."""
+    """This is the test that will test all of the functions and give the result.  Below are the test conditions"""
     if got == expected:
         prefix = ' OK '
     else:
@@ -60,8 +76,9 @@ def test(got, expected):
 
 # main() calls the above functions with interesting inputs,
 # using the above test() to check if the result is correct or not.
+
 def main():
-    """Your code goes here.  Edit this docstring."""
+    """This will be entered through ech of the functions."""
     print('verbing')
     test(verbing('hail'), 'hailing')
     test(verbing('swiming'), 'swimingly')

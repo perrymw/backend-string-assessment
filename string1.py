@@ -23,9 +23,13 @@
 # instead of the actual count.
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
+
 def donuts(count):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """Tells whether or not there are too many donuts.  Gotta watch your caloric intake, bro"""
+    if count >= 10:
+        return("Number of donuts: many")
+    else:
+        return("Number of donuts: {}".format(count))
 
 
 # B. both_ends
@@ -33,10 +37,14 @@ def donuts(count):
 # and the last 2 chars of the original string,
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
-def both_ends(s):
-    """Your code goes here.  Edit this docstring."""
-    return
 
+def both_ends(s):
+
+    """provides the first two and last two of a string and concatenates them"""
+    if len(s)<2:
+        return('')
+    else:
+        return(s[:2]+s[-2:])
 
 # C. fix_start
 # Given a string s, return a string
@@ -47,10 +55,13 @@ def both_ends(s):
 # Assume that the string is length 1 or more.
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
-def fix_start(s):
-    """Your code goes here.  Edit this docstring."""
-    return
 
+def fix_start(s):
+    """finds of the first letter throughout the string and replaces the letters with asteriscs if the letter occurs more than once."""
+    letter = s[0]
+    for i in range(len(s)):
+        new_string = s[1:].replace(letter, "*")
+    return letter + new_string
 
 # D. MixUp
 # Given strings a and b, return a single string with a and b separated
@@ -59,15 +70,20 @@ def fix_start(s):
 #   'mix', pod' -> 'pox mid'
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
+
 def mix_up(a, b):
-    """Your code goes here.  Edit this docstring."""
-    return
+    """This will swap the first two characters of the strings."""
+    a_list = list(a)
+    b_list = list(b)
+    a_list[:2], b_list[:2] = b_list[:2], a_list[:2]
+    return "{} {}".format(''.join(a_list), ''.join(b_list))
 
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
+
 def test(got, expected):
-    """Your code goes here.  Edit this docstring."""
+    """Test to test functions."""
     if got == expected:
         prefix = ' OK '
     else:
@@ -78,7 +94,7 @@ def test(got, expected):
 # Provided main() calls the above functions with interesting inputs,
 # using test() to check if each result is correct or not.
 def main():
-    """Your code goes here.  Edit this docstring."""
+    """content to check the functions against in the text."""
     print('donuts')
     # Each line calls donuts, compares its result to the expected for that call.
     test(donuts(4), 'Number of donuts: 4')
